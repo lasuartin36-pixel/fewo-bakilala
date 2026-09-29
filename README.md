@@ -1,2 +1,2 @@
-# fewo-bakilala
-a air bnb rent 
+# FeWo Bakilala
+Statische Website der Ferienwohnung in Kippenheim. Öffne index.html im Browser.
