@@ -41,17 +41,17 @@ h2{font-size:clamp(2rem,5vw,4rem);max-width:16ch;margin-bottom:2rem}
 .rules{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem 2rem}
 .rules li{border-top:1px solid var(--line);padding-top:.8rem}
 footer{padding:3rem clamp(1.2rem,5vw,4rem);border-top:1px solid var(--line);color:var(--mute);display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:space-between}
-@media(max-width:760px){.split{grid-template-columns:1fr}.gal{grid-template-columns:1fr 1fr}#frame img{clip-path:inset(10% 6% round 22px)}}
+@media(max-width:760px){.split{grid-template-columns:1fr}.gal{grid-template-columns:1fr 1fr}#frame{height:auto;aspect-ratio:4/3;margin:0 clamp(1.2rem,5vw,4rem);border-radius:22px;overflow:hidden}#frame img{position:static;clip-path:none}}
 @media(prefers-reduced-motion:reduce){.cta{transition:none}}
 </style>
 </head>
 <body>
-<nav><a class="brand" href="#top">FeWo Bakilala</a><a class="cta airbnb" href="#">Auf Airbnb buchen</a></nav>
+<nav><a class="brand" href="#top">FeWo Bakilala</a><a class="cta airbnb" href="https://www.airbnb.co.uk/rooms/1381307849385353701" target="_blank" rel="noopener">Auf Airbnb buchen</a></nav>
 
 <header class="hero" id="top">
 <h1><span class="ln"><span>Ankommen.</span></span><span class="ln"><span>12 Minuten</span></span><span class="ln"><span>bis zum</span></span><span class="ln"><span>Europa-Park.</span></span></h1>
 <p>Ihre Ferienwohnung in Kippenheim. Für bis zu 4 Personen, mit Baby 5.</p>
-<div><a class="cta airbnb" href="#">Auf Airbnb buchen</a></div>
+<div><a class="cta airbnb" href="https://www.airbnb.co.uk/rooms/1381307849385353701" target="_blank" rel="noopener">Auf Airbnb buchen</a></div>
 </header>
 
 <section id="frame" aria-label="Wohnbereich"><img src="images/hero.jpg" alt="Heller Wohn- und Schlafbereich mit Küchenzeile der Ferienwohnung"></section>
@@ -59,7 +59,7 @@ footer{padding:3rem clamp(1.2rem,5vw,4rem);border-top:1px solid var(--line);colo
 <section class="pad"><div class="facts">
 <div><b>4 Gäste</b>Mit Baby bis zu 5 Personen</div>
 <div><b>2 Betten</b>Ein Doppelbett und ein Couchbett</div>
-<div><b>Ab 1 Nacht</b>Check-in ab 15 Uhr, Check-out bis 11 Uhr</div>
+<div><b>Ab 1 Nacht</b>Check-in ab 16 Uhr, Check-out bis 10 Uhr</div>
 </div></section>
 
 <section class="pad split" style="padding-top:0"><div><h2>Die Wohnung</h2><p style="color:var(--mute)">Eine helle, moderne Ferienwohnung mit offener Küche, Wohnbereich und eigenem Bad mit Dusche. Ideal für Familien und Paare, die den Europa-Park besuchen und abends in Ruhe ankommen möchten.</p></div><figure><img src="images/wohnzimmer.jpg" alt="Wohnbereich mit Sofa und Blick zur Küche" loading="lazy"></figure></section>
@@ -89,7 +89,7 @@ footer{padding:3rem clamp(1.2rem,5vw,4rem);border-top:1px solid var(--line);colo
 <li>Nachtruhe ab 21 Uhr</li><li>Rauchen nur im Außenbereich</li><li>Keine Haustiere</li><li>Keine Grills auf der Terrasse</li><li>Übernachten dürfen nur angemeldete Gäste</li>
 </ul></section>
 
-<section class="pad dark" id="buchen"><h2>Jetzt buchen.</h2><p style="max-width:34rem">Verfügbarkeit, Preis und Buchung laufen sicher und bequem über Airbnb.</p><div style="margin-top:2rem"><a class="cta airbnb" href="#">Auf Airbnb buchen</a></div></section>
+<section class="pad dark" id="buchen"><h2>Jetzt buchen.</h2><p style="max-width:34rem">Verfügbarkeit, Preis und Buchung laufen sicher und bequem über Airbnb.</p><div style="margin-top:2rem"><a class="cta airbnb" href="https://www.airbnb.co.uk/rooms/1381307849385353701" target="_blank" rel="noopener">Auf Airbnb buchen</a></div></section>
 
 <footer><span>FeWo Bakilala, Kippenheim</span><span><a href="#">Impressum</a> · <a href="#">Datenschutz</a></span></footer>
 
@@ -103,8 +103,7 @@ gsap.registerPlugin(ScrollTrigger);
 var l=new Lenis();l.on('scroll',ScrollTrigger.update);
 gsap.ticker.add(function(t){l.raf(t*1000)});gsap.ticker.lagSmoothing(0);
 gsap.from('.hero .ln span',{yPercent:110,duration:1,stagger:.12,ease:'power4.out',delay:.15});
-var m=matchMedia('(max-width:760px)').matches;
-gsap.fromTo('#frame img',{clipPath:m?'inset(10% 6% round 22px)':'inset(14% 24% round 28px)'},
+if(!matchMedia('(max-width:760px)').matches)gsap.fromTo('#frame img',{clipPath:'inset(14% 24% round 28px)'},
 {clipPath:'inset(0% 0% round 0px)',ease:'none',scrollTrigger:{trigger:'#frame',start:'top 85%',end:'top 5%',scrub:true}});
 gsap.utils.toArray('.gal figure').forEach(function(f){gsap.from(f,{y:50,opacity:0,duration:.8,ease:'power3.out',scrollTrigger:{trigger:f,start:'top 90%'}})});
 })();
