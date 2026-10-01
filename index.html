@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>FeWo Bakilala | Ferienwohnung in Kippenheim</title>
-<meta name="theme-color" content="#6d1a2c"><meta name="description" content="Ferienwohnung in Kippenheim, 12 Minuten vom Europa-Park. Für bis zu 4 Personen, mit Küche, WLAN und Parkplatz.">
+<meta name="theme-color" content="#6d1a2c"><meta name="description" content="Frisch sanierte Ferienwohnung in Kippenheim, 12 km vom Europa-Park und Rulantica. Für bis zu 4 Personen, mit Küche, WLAN, Parkplatz und Ladestation für E-Autos.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -38,11 +38,20 @@ h2{font-size:clamp(2rem,5vw,4rem);max-width:16ch;margin-bottom:2rem}
 .chips{display:flex;flex-wrap:wrap;gap:.7rem}.chips span{border:1px solid var(--line);border-radius:99px;padding:.5rem 1.1rem}
 .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.gal figure{aspect-ratio:3/4;border-radius:18px;overflow:hidden}
 .dark{background:var(--wine);color:var(--cream)}.dark p{color:#e8d6d8}
+.facts small{color:var(--mute)}
+.hl{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.hl div{border:1px solid var(--line);border-radius:18px;padding:1.4rem}.hl b{display:block;font:600 1.15rem Outfit,sans-serif;margin-bottom:.3rem}.hl p{color:var(--mute);font-size:.95rem}
+.charge{display:flex;gap:1.2rem;align-items:center;margin-top:2.5rem;padding:1.5rem;border-radius:18px;background:var(--wine);color:var(--cream);max-width:44rem}
+.charge svg{flex:none;width:2.6rem;height:2.6rem}.charge b{display:block;font:600 1.2rem Outfit,sans-serif}.charge p{color:#e8d6d8}
+.gal figure{translate:0 0;scale:1;transition:translate .35s ease,scale .35s ease,box-shadow .35s ease}
+.gal img{transition:transform .5s ease,filter .35s ease}
+@media(hover:hover){.gal figure:hover{translate:0 -6px;scale:1.03;box-shadow:0 18px 40px -12px rgba(74,18,32,.45);z-index:1;position:relative}
+.gal figure:hover img{transform:scale(1.08)}.gal:has(figure:hover) figure:not(:hover) img{filter:brightness(.8) saturate(.85)}}
 .rules{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem 2rem}
 .rules li{border-top:1px solid var(--line);padding-top:.8rem}
 footer{padding:3rem clamp(1.2rem,5vw,4rem);border-top:1px solid var(--line);color:var(--mute);display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:space-between}
 @media(max-width:760px){.split{grid-template-columns:1fr}.gal{grid-template-columns:1fr 1fr}#frame{height:auto;aspect-ratio:4/3;margin:0 clamp(1.2rem,5vw,4rem);border-radius:22px;overflow:hidden}#frame img{position:static;clip-path:none}}
-@media(prefers-reduced-motion:reduce){.cta{transition:none}}
+@media(prefers-reduced-motion:reduce){.cta{transition:none}.gal figure:hover{translate:none;scale:none}.gal figure:hover img{transform:none}}
 </style>
 </head>
 <body>
@@ -50,23 +59,32 @@ footer{padding:3rem clamp(1.2rem,5vw,4rem);border-top:1px solid var(--line);colo
 
 <header class="hero" id="top">
 <h1><span class="ln"><span>Ankommen.</span></span><span class="ln"><span>12 Minuten</span></span><span class="ln"><span>bis zum</span></span><span class="ln"><span>Europa-Park.</span></span></h1>
-<p>Ihre Ferienwohnung in Kippenheim. Für bis zu 4 Personen, mit Baby 5.</p>
+<p>Ihre frisch sanierte Ferienwohnung in Kippenheim, nur 12 km vom Europa-Park und Rulantica. Für bis zu 4 Personen, mit Baby 5.</p>
 <div><a class="cta airbnb" href="https://www.airbnb.co.uk/rooms/1381307849385353701" target="_blank" rel="noopener">Auf Airbnb buchen</a></div>
 </header>
 
 <section id="frame" aria-label="Wohnbereich"><img src="images/hero.jpg" alt="Heller Wohn- und Schlafbereich mit Küchenzeile der Ferienwohnung"></section>
 
 <section class="pad"><div class="facts">
-<div><b>4 Gäste</b>Mit Baby bis zu 5 Personen</div>
-<div><b>2 Betten</b>Ein Doppelbett und ein Couchbett</div>
+<div><b>4 Gäste</b>Mit Babybett bis zu 5 Personen</div>
+<div><b>1 Schlafzimmer</b>Doppelbett, dazu eine Schlafcouch im Wohn- und Essbereich</div>
+<div><b>4,98 ★</b>Aus 116 Bewertungen auf Airbnb</div>
 <div><b>Ab 1 Nacht</b>Check-in ab 16 Uhr, Check-out bis 10 Uhr</div>
 </div></section>
 
-<section class="pad split" style="padding-top:0"><div><h2>Die Wohnung</h2><p style="color:var(--mute)">Eine helle, moderne Ferienwohnung mit offener Küche, Wohnbereich und eigenem Bad mit Dusche. Ideal für Familien und Paare, die den Europa-Park besuchen und abends in Ruhe ankommen möchten.</p></div><figure><img src="images/wohnzimmer.jpg" alt="Wohnbereich mit Sofa und Blick zur Küche" loading="lazy"></figure></section>
+<section class="pad" style="padding-top:0"><h2>Von Gästen geliebt</h2><div class="hl">
+<div><b>Gäste-Favorit</b><p>Eine der beliebtesten Unterkünfte auf Airbnb und unter den Top 5 % der Unterkünfte.</p></div>
+<div><b>Superhost Baki</b><p>Zuverlässig, schnell erreichbar und mit Herz für die Gäste.</p></div>
+<div><b>Selbst-Check-in</b><p>Mit der Schlüsselbox reisen Sie entspannt an, wann es Ihnen passt.</p></div>
+<div><b>Ruhige Lage</b><p>Gäste loben die ruhige Umgebung. Hier schlafen Sie nach dem Parkbesuch gut.</p></div>
+</div></section>
 
-<section class="pad" style="padding-top:0"><h2>Ausstattung</h2><div class="chips"><span>Küche</span><span>WLAN</span><span>Bad mit Dusche</span><span>Parkplatz</span><span>Doppelbett</span><span>Couchbett</span></div></section>
+<section class="pad split" style="padding-top:0"><div><h2>Die Wohnung</h2><p style="color:var(--mute)">Frisch saniert und mit Liebe zum Detail eingerichtet. Sie haben ein Schlafzimmer mit Doppelbett, einen Wohn- und Essbereich mit Schlafcouch, eine voll ausgestattete Küche und ein Bad mit Dusche. Ein Babybett stellen wir bei Bedarf gerne bereit. Ideal für einen kurzen oder längeren Aufenthalt. Tierfreies Nichtraucher-Apartment.</p></div><figure><img src="images/wohnzimmer.jpg" alt="Wohnbereich mit Sofa und Blick zur Küche" loading="lazy"></figure></section>
 
-<section class="pad dark"><div class="big">12 Min.</div><h2 style="margin-top:1rem">zum Europa-Park.</h2><p style="max-width:34rem">Kippenheim liegt ruhig und nah am Freizeitpark. Von hier aus sind auch Lahr und der Schwarzwald schnell erreichbar.</p></section>
+<section class="pad" style="padding-top:0"><h2>Ausstattung</h2><div class="chips"><span>Voll ausgestattete Küche</span><span>Kostenloses WLAN</span><span>Parkplatz direkt vor dem Haus</span><span>Ladestation für E-Autos</span><span>Selbst-Check-in</span><span>Bad mit Dusche</span><span>Doppelbett</span><span>Schlafcouch</span><span>Babybett auf Anfrage</span></div>
+<div class="charge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg><div><b>Mit dem E-Auto anreisen?</b><p>Vor Ort gibt es eine Ladestation, die Sie als Gast nutzen können. So starten Sie morgens voll geladen in den Tag.</p></div></div></section>
+
+<section class="pad dark"><div class="big">12 Min.</div><h2 style="margin-top:1rem">zum Europa-Park.</h2><p style="max-width:34rem">Kippenheim liegt ruhig, nur 12 km vom Europa-Park und der Wasserwelt Rulantica entfernt. Freiburg und das schöne Straßburg erreichen Sie in rund 35 km, Lahr und der Schwarzwald liegen direkt vor der Tür.</p></section>
 
 <section class="pad"><h2>Einblicke</h2><div class="gal">
 <figure><img src="images/schlafzimmer.jpg" alt="Schlafbereich mit Doppelbett" loading="lazy"></figure>
@@ -86,12 +104,12 @@ footer{padding:3rem clamp(1.2rem,5vw,4rem);border-top:1px solid var(--line);colo
 <section class="pad" style="padding-top:0"><h2>Preise</h2><p style="color:var(--mute);max-width:36rem"><b style="color:var(--fg)">Ab 100 € pro Nacht</b> für eine Person, jede weitere Person kostet 20 € pro Nacht. Den genauen Gesamtpreis für Ihre Reisedaten sehen Sie bei Airbnb.</p></section>
 
 <section class="pad" style="padding-top:0"><h2>Gut zu wissen</h2><ul class="rules">
-<li>Nachtruhe ab 21 Uhr</li><li>Rauchen nur im Außenbereich</li><li>Keine Haustiere</li><li>Keine Grills auf der Terrasse</li><li>Übernachten dürfen nur angemeldete Gäste</li>
+<li>Nachtruhe ab 21 Uhr</li><li>Rauchen nur im Außenbereich</li><li>Keine Haustiere, tierfreie Wohnung</li><li>Keine Grills auf der Terrasse</li><li>Übernachten dürfen nur angemeldete Gäste</li>
 </ul></section>
 
 <section class="pad dark" id="buchen"><h2>Jetzt buchen.</h2><p style="max-width:34rem">Verfügbarkeit, Preis und Buchung laufen sicher und bequem über Airbnb.</p><div style="margin-top:2rem"><a class="cta airbnb" href="https://www.airbnb.co.uk/rooms/1381307849385353701" target="_blank" rel="noopener">Auf Airbnb buchen</a></div></section>
 
-<footer><span>FeWo Bakilala, Kippenheim</span><span><a href="#">Impressum</a> · <a href="#">Datenschutz</a></span></footer>
+<footer><span>FeWo Bakilala, Kippenheim</span><span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span></footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
